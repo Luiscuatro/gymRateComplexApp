@@ -1,14 +1,12 @@
 package com.Gym.Gymrate.model;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "APP_USERS")
 public class User {
     @Id
     private String id;
