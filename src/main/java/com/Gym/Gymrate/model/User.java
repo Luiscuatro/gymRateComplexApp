@@ -2,8 +2,6 @@ package com.Gym.Gymrate.model;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "APP_USERS")
@@ -14,14 +12,7 @@ public class User {
     private String email;
     private int trainingLevel;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<WorkoutSession> workoutSessionList; // No inicializar aquí para que JPA maneje la relación correctamente y evite problemas con Lazy Loading
-
-
-
-    public User () {
-
-    }
+    public User () {}
 
     public User (String id, String name, String email, int trainingLevel) {
         this.id = id;
@@ -56,13 +47,5 @@ public class User {
     }
     public void setTrainingLevel(int trainingLevel) {
         this.trainingLevel = trainingLevel;
-    }
-
-    public List<WorkoutSession> getWorkoutSessionList() {
-        return workoutSessionList;
-    }
-
-    public void setWorkoutSessionList(List<WorkoutSession> workoutSessionList) {
-        this.workoutSessionList = workoutSessionList;
     }
 }

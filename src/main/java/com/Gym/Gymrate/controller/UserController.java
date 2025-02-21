@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
@@ -32,7 +31,7 @@ public class UserController {
 
     @PutMapping("/{id}")
     public User updateUser(@PathVariable String id, @RequestBody User user) {
-        user.setId(id); // Asegurar que actualiza el usuario correcto
+        user.setId(id);
         return userService.updateUser(user);
     }
 
